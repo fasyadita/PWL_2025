@@ -13,6 +13,43 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/hello', function () {
+    return 'Hello World';
 });
+
+Route::get('/world', function () {
+    return 'World';
+});
+
+Route::get('/', function () {
+    return view('Welcome');
+});
+
+Route::get('/', function () {
+    return ('Selamat Datang');
+});
+
+// Route::get('/', function () {
+//     return view('Welcome');
+// });
+
+Route::get('/about', function () {
+    return ('Nim Fasya : 2341760077');
+});
+
+// Route::get('/user/{name}', function ($name) {
+//     return 'Nama saya ' . $name;
+// });
+
+Route::get('/posts/{post}/comments/{comment}', function ($postId, $commentId) {
+    return 'Pos ke-' . $postId . " Komentar ke-: " . $commentId;
+});
+
+Route::get('/articles/{id}', function ($id) {
+    return "Halaman Artikel dengan NIM " .$id ;
+});
+
+Route::get('/user/{name?}', function ($name='John') {
+    return 'Nama saya '.$name;
+});
+
